@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName cubieboard.jp
+	ServerAlias www.cubieboard.jp
+	DocumentRoot /var/www/cubieboard.jp/httpdoc/
+	
+	<Directory /var/www/cubieboard.jp/httpdoc/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/cubieboard.jp.error.log
+	CustomLog ${APACHE_LOG_DIR}/cubieboard.jp.access.log combined
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+</VirtualHost>
